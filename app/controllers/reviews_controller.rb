@@ -14,9 +14,12 @@ class ReviewsController < ApplicationController
 
     @review = Review.new(form_params)
 
-    @review.save
+    if @review.save
+      redirect_to root_path
+    else
+      render "new"
+    end
 
-    redirect_to root_path
 
   end
 
@@ -41,9 +44,11 @@ class ReviewsController < ApplicationController
 
     @review = Review.find(params[:id])
 
-    @review.update(form_params)
-
+   if @review.update(form_params)
     redirect_to review_path(@review)
+   else
+    render "edit"
+   end
 
   end
 
