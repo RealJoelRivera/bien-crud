@@ -1,8 +1,14 @@
+<% content_for :page_title, @review.title %>
+
 <h2><%= @review.title%></h2>
 
 <div class="body"><%= simple_format @review.body%></div>
 
 <div class="rating"><%= @review.rating%> / 10 </div>
+
+<% if @review.ambiance.present? %>
+  <div class="ambiance"> Ambiance: <%= @review.ambiance %> </>
+<% end %>
 
 <div class="action">
 <%= link_to "Edit this review", edit_review_path(@review) %>
