@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
 
     @price = params[:price]
     @cuisine = params[:cuisine]
+    @location = params[:location]
 
     @reviews = Review.all
 
@@ -13,6 +14,10 @@ class ReviewsController < ApplicationController
 
     if @cuisine.present?
       @reviews = @reviews.where(cuisine: @cuisine)
+    end
+
+    if @location.present?
+      @reviews = @reviews.near(@location)
     end
 
   end
@@ -64,7 +69,7 @@ class ReviewsController < ApplicationController
   end
 
   def form_params
-    params.require(:review).permit(:title, :restaurant, :body, :rating, :ambiance, :cuisine, :price)
+    params.require(:review).permit(:title, :restaurant, :body, :rating, :ambiance, :cuisine, :price, :address)
   end
 
 end
