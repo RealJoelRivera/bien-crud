@@ -36,6 +36,8 @@ gem "simple_form"
 # make our filters active
 gem "active_link_to"
 
+gem "profanity_filter"
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
