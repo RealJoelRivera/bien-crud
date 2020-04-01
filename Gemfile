@@ -36,6 +36,7 @@ gem "simple_form"
 # make our filters active
 gem "active_link_to"
 
+# make sure swear words don't show
 gem "profanity_filter"
 
 # Use ActiveStorage variant
