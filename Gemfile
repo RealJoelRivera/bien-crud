@@ -33,6 +33,9 @@ gem "geocoder"
 # makes forms easier to work with
 gem "simple_form"
 
+# make our filters active
+gem "active_link_to"
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
