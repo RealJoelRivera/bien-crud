@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
 
+  before_action :check_login, expect: [:index, :show]
+
   def index
 
     @price = params[:price]
