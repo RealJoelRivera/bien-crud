@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
   
   def is_logged_in?
-    @session[:user_id].present?
+    session[:user_id].present?
   end
 
 end

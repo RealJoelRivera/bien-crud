@@ -4,6 +4,11 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def show
+    @user = User.find_by(username: params[:id])
+  end
+  
+
   def new
     @user = User.new
   end
@@ -17,12 +22,10 @@ class UsersController < ApplicationController
     else
       render "new"
     end
-    
   end
 
   def form_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
-  
 
 end
