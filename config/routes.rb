@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   end
   resources :users
   resource :session
+  resources :categories
+  resources :listings
   root "reviews#index"
 
 end
