@@ -2,6 +2,24 @@
 
 <h2><%= @review.title%></h2>
 
+<% if is_logged_in? %>
+  <p>
+    <% if @review.bookmarks.where(user: @current_user).any? %>
+      <%= link_to "Unbookmark", review_bookmark_path(@review), method: :delete %>
+    <% else %>
+      <%= link_to "Bookmark", review_bookmark_path(@review), method: :post %>
+    <% end %>
+  </p>
+<% end %>
+
+<h3>Bookmarked by ... </h3>
+
+<ul>
+  <% @review.bookmarks.each do |bookmark| %>
+    <li><%= bookmark.user.username %></li>
+  <% end %>
+</ul>
+
 <div class="body"><%= simple_format @review.body%></div>
 
 <div class="rating"><%= @review.rating%> / 10 </div>
