@@ -28,19 +28,20 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 # add in our geocoding
-gem "geocoder"
+gem 'geocoder'
 
 # makes forms easier to work with
-gem "simple_form"
+gem 'simple_form'
 
 # make our filters active
-gem "active_link_to"
+gem 'active_link_to'
 
 # make sure swear words don't show
-gem "profanity_filter"
+gem 'profanity_filter'
 
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+# add file uploads
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
