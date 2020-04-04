@@ -22,4 +22,12 @@ class ApplicationController < ActionController::Base
     session[:user_id].present?
   end
 
+  def is_admin?
+    @user = find_current_user
+    unless @user.present? and @user.is_admin?
+      redirect_to root_path
+    end
+  end
+  
+
 end
