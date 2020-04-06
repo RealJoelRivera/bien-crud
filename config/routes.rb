@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  ActiveAdmin.routes(self)
   resources :reviews do 
     resources :comments
     resource :bookmark
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
   resource :session
   resources :categories
   resources :listings
+  get "about", to: "pages#about"
+  get "terms", to: "pages#terms"
   root "reviews#index"
 
 end
